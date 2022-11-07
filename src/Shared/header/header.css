@@ -1,0 +1,19 @@
+.small-nav {
+    background-color: #03203C;
+    color: whitesmoke;
+}
+
+.small-nav a:hover {
+    color: rgb(221, 178, 122);
+    font-size: 15px;
+}
+
+.large-nav a {
+    color: #03203C;
+
+}
+
+.large-nav a:hover {
+    color: rgb(253, 52, 52);
+    background-color: white;
+}
