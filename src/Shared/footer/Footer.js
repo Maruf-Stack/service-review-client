@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './footer.css'
 const Footer = () => {
     return (
-        <div className='mt-10 h-96'>
+        <div className='mt-5'>
             <footer className="px-10 py-10 rounded lg:py-20 footer footer-center bg-base-200 text-base-content">
                 <div className="grid grid-flow-col gap-4 footer-items">
                     <Link className="link link-hover">About us</Link>
