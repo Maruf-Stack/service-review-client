@@ -9,6 +9,7 @@ const Header = () => {
         <li><Link className='font-semibold'>Contact</Link></li>
         <li><Link className='font-semibold'>About us</Link></li>
         <li><Link className='mr-2 font-semibold'>Services</Link></li>
+        <li><Link to="/blog" className='mr-2 font-semibold'>Blog</Link></li>
         <button className="invisible px-5 py-1 btn btn-outline btn-info lg:visible">Login</button>
     </>
     const smmenu = <>
@@ -16,6 +17,7 @@ const Header = () => {
         <li><Link className='font-semibold'>Contact</Link></li>
         <li><Link className='font-semibold'>About us</Link></li>
         <li><Link className='mr-2 font-semibold'>Services</Link></li>
+        <li><Link to="/blog" className='mr-2 font-semibold'>Blog</Link></li>
         <li><Link className='mr-2 font-semibold'>Login</Link></li>
         <li><Link className='mr-2 font-semibold'>Sign up</Link></li>
         <li><Link className='mr-2 font-semibold'>Sign out</Link></li>
