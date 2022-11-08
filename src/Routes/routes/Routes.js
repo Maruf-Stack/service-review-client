@@ -4,6 +4,7 @@ import Main from '../../Main/Main';
 import Blog from '../../pages/blog/Blog';
 import Home from '../../pages/home/Home';
 import Login from '../../pages/login/Login';
+import Regi from '../../pages/registraion/Regi';
 import Footer from '../../Shared/footer/Footer';
 
 const router = createBrowserRouter([
@@ -21,6 +22,9 @@ const router = createBrowserRouter([
             }, {
                 path: '/login',
                 element: <Login></Login>
+            }, {
+                path: '/regi',
+                element: <Regi></Regi>
             }
         ]
     }
