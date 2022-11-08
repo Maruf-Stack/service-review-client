@@ -27,7 +27,7 @@ const Header = () => {
     return (
         <div>
             <div className='mt-5 text-2xl font-bold text-center lg:hidden'>
-                <h2>This is name of this website</h2>
+                <h2>Photography <span>Lover</span></h2>
             </div>
             <div className="h-20 navbar mb-7">
                 <div className="navbar-start">
@@ -49,7 +49,7 @@ const Header = () => {
 
                 </div>
                 <div className="hidden navbar-center lg:flex">
-                    <h2 className='mr-20 text-3xl font-bold'>Website name</h2>
+                    <h2 className='mr-20 text-3xl font-bold'>Photography-<span className='font-serif text-blue-700'>L</span>over</h2>
                     <ul className="p-0 menu menu-horizontal large-nav">
 
                         {lgmenu}
