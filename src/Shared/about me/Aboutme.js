@@ -10,12 +10,12 @@ const Aboutme = () => {
     const img7 = 'https://images.prothomalo.com/prothomalo-english%2Fimport%2Fmedia%2F2017%2F11%2F11%2F96223d21c415f7ef334b6856c4e9dd1e-Google-Maps.jpg?auto=format&fit=fill&bg=000000&q=35&w=1200♫'
     return (
         <div>
-            <div className='grid grid-cols-1 gap-10 mx-20 mt-10 lg:grid-cols-2'>
+            <div className='grid grid-cols-1 gap-10 mt-10 lg:mx-20 lg:grid-cols-2'>
                 <div className="gallery">
                     <h1 className='text-2xl font-bold'>Here is some of my photography</h1>
                     <br></br>
                     <hr />
-                    <div className='grid grid-cols-1 mt-6 lg:grid-cols-2'>
+                    <div className='grid grid-cols-1 mx-5 mt-6 lg:grid-cols-2'>
                         <img src={img1} alt="" className='w-full h-56' />
                         <img src={img2} alt="" className='w-full h-56' />
                         <img src={img3} alt="" className='w-full h-56' />
@@ -26,7 +26,7 @@ const Aboutme = () => {
 
                     </div>
                 </div>
-                <div className="p-20 myskill">
+                <div className="p-12 lg:p-20 myskill">
                     <h1 className='text-3xl font-bold text-center'>My skills</h1><br></br>
                     <hr />
                     <ul className='mt-3 text-xl text-slate-600'>
