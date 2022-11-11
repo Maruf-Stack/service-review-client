@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider';
 
 
 const Regi = () => {
+    const { emailPass } = useContext(AuthContext)
+    const handleSignIn = event => {
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        emailPass(email, password)
+            .then(result => {
+                const user = result.user;
+                form.reset()
+
+            })
+            .catch(error => console.error(error))
+
+    }
 
     return (
         <div>
             <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
                 <div className="max-w-lg mx-auto">
 
-                    <form className="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
+                    <form onSubmit={handleSignIn} className="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
                         <p className="text-lg font-medium">Sign up</p>
 
                         <div>

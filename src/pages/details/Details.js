@@ -1,17 +1,21 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
-import { ImageViewer } from "react-image-viewer-dv"
+const Details = () => {
+    const service = useLoaderData()
+    const { _id, name, img, rating, description, price } = service
 
-const Service = ({ service }) => {
-    const { _id, name, img, rating, description, price } = service;
     return (
         <div>
-            <div>
+            <div className='mx-5 lg:mx-20'>
                 <Link href="#" className="block p-4 mx-auto rounded-lg shadow-sm shadow-indigo-100">
-                    <ImageViewer>
-                        <img src={img} alt="" className='w-80 h-80 mx-auto' />
-                    </ImageViewer>
+                    <img
+                        alt="Home"
+                        src={img}
+                        className='w-full text-center rounded lg:h-72 lg:w-72 h-80'
+                    />
+
                     <div className="mt-2">
                         <dl>
                             <div>
@@ -36,20 +40,24 @@ const Service = ({ service }) => {
                                 </div>
                                 <FaStar></FaStar>
                             </div>
-                            <Link to={`/details/${_id}`}><button className="btn btn-link">View details</button></Link>
 
                         </div>
                     </div>
                     <div>
                         {
-                            description.slice(0, 100)
-                        }...
+                            description
+                        }
                     </div>
                 </Link>
+
+                <div className='grid w-6/12 grid-cols-2 gap-20 mx-auto mt-10 '>
+                    <button className="text-gray-200 btn btn-info">See reviews</button>
+                    <button className="text-gray-200 btn btn-accent">Review please</button>
+                </div>
 
             </div>
         </div>
     );
 };
 
-export default Service;
+export default Details;

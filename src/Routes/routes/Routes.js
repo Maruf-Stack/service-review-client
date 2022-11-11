@@ -1,10 +1,14 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../../Main/Main';
+import Allservices from '../../pages/allservices/Allservices';
 import Blog from '../../pages/blog/Blog';
+import Details from '../../pages/details/Details';
 import Home from '../../pages/home/Home';
 import Login from '../../pages/login/Login';
+import Myreviews from '../../pages/my reviews/Myreviews';
 import Regi from '../../pages/registraion/Regi';
+import Private from '../private-route/Private';
 
 const router = createBrowserRouter([
     {
@@ -24,6 +28,17 @@ const router = createBrowserRouter([
             }, {
                 path: '/regi',
                 element: <Regi></Regi>
+            }, {
+                path: '/allservices',
+                element: <Allservices></Allservices>
+            }
+            , {
+                path: '/details/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/allservices/${params.id}`),
+                element: <Details></Details>
+            }, {
+                path: '/myreviews',
+                element: <Private><Myreviews></Myreviews></Private>
             }
         ]
     }

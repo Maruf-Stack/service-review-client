@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Priveteroute = () => {
+const Myreviews = () => {
     return (
         <div>
-
+            <p>reviews</p>
         </div>
     );
 };
 
-export default Priveteroute;
+export default Myreviews;

@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider';
 import './header.css'
 
 
 const Header = () => {
+    const { user, singOut } = useContext(AuthContext)
+    const handlesingOut = () => {
+        singOut()
+    }
     const lgmenu = <>
         <li><Link to='/' className='font-semibold'>Home</Link></li>
-        <li><Link className='font-semibold'>Contact</Link></li>
-        <li><Link className='font-semibold'>About us</Link></li>
-        <li><Link className='mr-2 font-semibold'>Services</Link></li>
         <li><Link to="/blog" className='mr-2 font-semibold'>Blog</Link></li>
-        <Link to='/login'><button className="invisible px-5 py-1 btn btn-outline btn-info lg:visible">Login</button></Link>
+        <li><Link className='font-semibold'>About us</Link></li>
+        <div>
+            {user?.uid ?
+                <div className='flex'>
+                    <li><Link className='font-semibold'>My reviews</Link></li>
+                    <li><Link className='font-semibold'>Add service</Link></li>
+                    <Link><button onClick={handlesingOut} className="btn btn-outline btn-accent">Logout</button></Link>
+                </div>
+                :
+                <Link to='/login'><button className="invisible px-5 py-1 btn btn-outline btn-info lg:visible">Login</button></Link>
+            }
+        </div>
+
+
     </>
     const smmenu = <>
         <li><Link to='/' className='font-semibold'>Home</Link></li>
@@ -18,10 +33,17 @@ const Header = () => {
         <li><Link className='font-semibold'>About us</Link></li>
         <li><Link className='mr-2 font-semibold'>Services</Link></li>
         <li><Link to="/blog" className='mr-2 font-semibold'>Blog</Link></li>
-        <li><Link to='/login' className='mr-2 font-semibold'>Login</Link></li>
-        <li><Link className='mr-2 font-semibold'>Sign up</Link></li>
-        <li><Link className='mr-2 font-semibold'>Sign out</Link></li>
+        {
+            user?.uid ?
+                <li><Link className='font-semibold'>My reviews</Link>
+                    <Link className='font-semibold'>Add service</Link>
+                    <button onClick={handlesingOut}> <Link className='mr-2 font-semibold'>Sign out</Link></button>
+                </li> :
+                <li><Link to='/login' className='mr-2 font-semibold'>Login</Link>
+                    <Link to='/regi' className='mr-2 font-semibold'>Sign up</Link>
+                </li>
 
+        }
     </>
 
     return (
